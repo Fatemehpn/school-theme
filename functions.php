@@ -154,6 +154,10 @@ add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
  */
 require get_template_directory() . '/inc/custom-header.php';
 
+
+// Custom Template for custom post types
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
 /**
  * Custom template tags for this theme.
  */
