@@ -96,7 +96,7 @@ $args = array(
     'hierarchical'       => false,
     'menu_position'      => 5,
     'menu_icon'          => 'dashicons-archive',
-    'supports'           => array( 'title', 'thumbnail', 'editor' ),
+    'supports'           => array( 'title' ),
 );
 
 register_post_type( 'kf-staff', $args );
