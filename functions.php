@@ -180,3 +180,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// changing the add student title
+function wpb_change_title_text( $title ){
+	$screen = get_current_screen();
+
+	if  ( 'kf-student' == $screen->post_type ) {
+			 $title = 'Add student name';
+	}
+
+	return $title;
+}
+add_filter( 'enter_title_here', 'wpb_change_title_text' );
