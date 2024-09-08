@@ -99,6 +99,8 @@ function school_theme_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'school_theme_setup' );
 
