@@ -193,3 +193,15 @@ function wpb_change_title_text( $title ){
 	return $title;
 }
 add_filter( 'enter_title_here', 'wpb_change_title_text' );
+
+// change the excerpt length
+function fwd_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
+
+function fwd_excerpt_more($more){
+	$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__('Read more about the student...', 'kf').'</a>';
+	return $more;
+}
+add_filter('excerpt_more','fwd_excerpt_more',999);
