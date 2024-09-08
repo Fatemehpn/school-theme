@@ -46,6 +46,8 @@ function kf_register_custom_post_types() {
       'menu_position'      => 5,
       'menu_icon'          => 'dashicons-archive',
       'supports'           => array( 'title', 'thumbnail', 'editor' ),
+      'template'           => array( array( 'core/paragraph'), array('core/button') ),
+      'template_lock'      => 'all'
   );
 
   register_post_type( 'kf-student', $args );
