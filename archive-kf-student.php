@@ -23,6 +23,14 @@ get_header();
       $args = array(
         'post_type'      => 'kf-student',
         'posts_per_page' => -1,
+        'order'          =>'ASC',
+         'orderBy'        => 'title',
+      );
+      $taxonomy = 'kf-student-type';
+      $terms    = get_terms(
+        array(
+          'taxonomy' => $taxonomy
+        )
       );
 
       $query = new WP_Query($args);
@@ -37,6 +45,19 @@ get_header();
         <!-- should change the image size later -->
         <?php the_post_thumbnail('thumbnail'); ?>
         <?php the_excerpt(); ?>
+        <?php 
+          $terms = get_the_terms(get_the_ID(), 'kf-student-type');
+          if ($terms && !is_wp_error($terms)) {
+            $term = reset($terms);
+            $term_link = get_term_link($term);
+            if (!is_wp_error($term_link)) {
+              ?>
+              <span>Specialty:</span>
+              <?php
+                echo '<a href="' . esc_url($term_link) . '">' . esc_html($term->name) .'</a>';
+            }
+        }
+        ?>
         </article>
         <?php
 
