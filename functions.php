@@ -189,6 +189,9 @@ function wpb_change_title_text( $title ){
 	if  ( 'kf-student' == $screen->post_type ) {
 			 $title = 'Add student name';
 	}
+	else if('kf-staff' == $screen->post_type ) {
+		$title = 'Add staff name';
+}
 
 	return $title;
 }
