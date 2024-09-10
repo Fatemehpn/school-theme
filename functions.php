@@ -46,6 +46,9 @@ function school_theme_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// Custom image crop sizes
+	add_image_size('portrait-blog', 300, 200, true);
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -208,3 +211,12 @@ function fwd_excerpt_more($more){
 	return $more;
 }
 add_filter('excerpt_more','fwd_excerpt_more',999);
+
+// change the students taxonomy titles
+function kf_student_title($title){
+	if(is_tax('kf-student-type')){
+		$title = single_term_title('',false) . " Students";
+	}
+	return $title;
+}
+add_filter('get_the_archive_title','kf_student_title');
