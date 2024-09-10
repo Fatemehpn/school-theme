@@ -30,6 +30,7 @@ get_header();
 				if( have_rows('schedule') ):
 					?>
 					<table>
+						<caption>Weekly Course Schedule</caption>
        					 <thead>
             				<tr>
 								<th>Date</th>
