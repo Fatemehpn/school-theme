@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package FWD_Starter_Theme
+ * @package School_Theme
  */
 
 get_header();
@@ -15,9 +15,11 @@ get_header();
 
     <header class="page-header">
       <?php
-      the_archive_title( '<h1 class="page-title">', '</h1>' );
-      the_archive_description( '<div class="archive-description">', '</div>' );
+      // the_archive_title( '<h1 class="page-title">', '</h1>' );
+      // the_archive_description( '<div class="archive-description">', '</div>' );
       ?>
+      <!-- changed the title of the page -->
+      <h1>The Class</h1>
     </header><!-- .page-header -->
     <?php
       $args = array(
@@ -43,7 +45,7 @@ get_header();
           <h2><?php the_title(); ?></h2>
         </a>
         <!-- should change the image size later -->
-        <?php the_post_thumbnail('thumbnail'); ?>
+        <?php the_post_thumbnail('portrait-blog'); ?>
         <?php the_excerpt(); ?>
         <?php 
           $terms = get_the_terms(get_the_ID(), 'kf-student-type');
