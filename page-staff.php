@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package FWD_Starter_Theme
+ * @package School_Theme
  */
 
 get_header();
@@ -78,6 +78,7 @@ while ( have_posts() ) :
                       <?php the_field('instructor_course') ?>
                   </p>
                   <?php
+
                   }
                   if(get_field('instructor_website')){
                     ?>
