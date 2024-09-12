@@ -82,6 +82,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "components/components";
 
 /*--------------------------------------------------------------
+# Templates
+--------------------------------------------------------------*/
+
+@import "components/templates/front-page";
+@import "components/templates/news-single";
+@import "components/templates/news";
+@import "components/templates/schedule";
+@import "components/templates/staff";
+@import "components/templates/student-type";
+@import "components/templates/students-single";
+@import "components/templates/students";
+
+
+/*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
 
