@@ -25,6 +25,11 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://www.fatimanassari.com/school/">Keanna Bayaua, Fatima Pournassari</a>' );
 				?>
 		</div><!-- .site-info -->
+		<nav id='kf-footer-navigation' class='kf-footer-navigation'>
+				<?php
+				wp_nav_menu(array('theme_location' => 'footer'));
+				?>
+			</nav>	
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
