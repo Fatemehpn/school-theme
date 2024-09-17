@@ -2,11 +2,12 @@
 
 	.site {
 		display: grid;
-		grid-template-columns: auto;
+		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 		grid-template-areas:
-			"header"
-			"main"
-			"footer";
+			"header header header"
+			". main ."
+			". sidebar ."
+			"footer footer footer";
 	}
 
 	.alignwide,
