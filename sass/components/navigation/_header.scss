@@ -17,8 +17,17 @@
         color: white;
       }
     }
+
+    .toggled{
+      .menu-menu-1-container{
+        background-color: #1B4D3E;
+      }
+    }
+
     .main-navigation{
       position: relative;
+    
+     
       button{
         background-color: transparent;
         border: none;

@@ -4,6 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
+
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 
@@ -12,6 +13,8 @@
 		return;
 	}
 
+
+  const mediaQuery = window.matchMedia('(min-width: 600px)')
 	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
 
 	// Return early if the button doesn't exist.
@@ -31,14 +34,29 @@
 		menu.classList.add( 'nav-menu' );
 	}
 
+	function handleToggleClass(e){
+		if(e.matches){
+			siteNavigation.classList.remove( 'toggled' );
+			button.setAttribute( 'aria-expanded', 'false' );
+		}
+	}
+	handleToggleClass(mediaQuery);
+	mediaQuery.addListener(handleToggleClass);
+
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {
+	
 		siteNavigation.classList.toggle( 'toggled' );
-
+	
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
+		}
+
+		if(mediaQuery.matches){
+			siteNavigation.classList.remove( 'toggled' );
+			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );
 
