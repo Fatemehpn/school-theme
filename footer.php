@@ -26,6 +26,7 @@
 				?>
 		</div><!-- .site-info -->
 		<nav id='kf-footer-navigation' class='kf-footer-navigation'>
+				<h2>Links</h2>
 				<?php
 				wp_nav_menu(array('theme_location' => 'footer'));
 				?>
