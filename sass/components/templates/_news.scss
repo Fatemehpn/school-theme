@@ -1,0 +1,9 @@
+.widget-area {
+    grid-area: sidebar;
+    display: flex;
+}
+
+.widget {
+    width: 30%;
+    margin: 0 1rem;
+}
