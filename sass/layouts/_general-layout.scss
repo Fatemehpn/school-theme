@@ -1,5 +1,5 @@
 .site {
-    max-width:125rem ;
+    max-width: 125rem;
     display: grid;
     grid-template-columns: 1fr minmax(0, 1000px) 1fr;
     grid-template-areas:
@@ -7,4 +7,9 @@
         ". main ."
         ". sidebar ."
         "footer footer footer";
+}
+
+.site-main {
+    grid-area: main;
+    margin-top: 3.75rem;
 }

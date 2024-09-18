@@ -12,6 +12,13 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<nav class="kf-custom-logo">
+			<?php
+				if ( function_exists( 'the_custom_logo' ) ) {
+						the_custom_logo();
+				}
+			?>
+		</nav>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
 				<?php
