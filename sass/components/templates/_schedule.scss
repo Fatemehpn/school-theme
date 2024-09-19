@@ -1,0 +1,39 @@
+.schedule-table caption {
+    font-size: 1.2rem;
+}
+
+.schedule-table tr {
+    background-color: #cccccc;
+}
+
+.schedule-table tbody tr:nth-of-type(odd) {
+    background-color: #e8e8e8;
+}
+
+
+.schedule-table table,
+.schedule-table th,
+.schedule-table td {
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1.1rem;
+
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 0.5rem;
+    display: block;
+}
+
+@media (min-width: 32em) {
+
+    .schedule-table th,
+    .schedule-table td {
+        display: table-cell;
+        font-size: 1.2rem;
+        padding: 1.5rem;
+
+    }
+
+}
