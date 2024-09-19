@@ -208,7 +208,12 @@ function fwd_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
 
 function fwd_excerpt_more($more){
-	$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__('Read more about the student...', 'kf').'</a>';
+	if (is_home()) {
+		$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__(' Read more...', 'kf').'</a>';
+	} else {
+		$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__('Read more about the student...', 'kf').'</a>';
+	}
+
 	return $more;
 }
 add_filter('excerpt_more','fwd_excerpt_more',999);

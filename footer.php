@@ -20,6 +20,7 @@
 			?>
 		</nav>
 		<div class="site-info">
+			<h2>Credits</h2>
 			<p>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
