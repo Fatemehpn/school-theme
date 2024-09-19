@@ -1,3 +1,55 @@
 .site-footer{
   grid-area: footer;
+  text-align: center;
+  background-color: #013220;
+  padding: 1rem;
+  color: white;
+  .kf-custom-logo{
+    width: 9.3rem;
+    height: 9.3rem;
+    margin: 0 auto;
+  }
+
+  .site-info{
+    a{
+      text-decoration: none;
+    }
+  }
+  .kf-footer-navigation{
+    ul{
+      padding-left: 0;
+      margin: 0;
+      li{
+        list-style: none;
+        text-align: center;
+
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width:37.5em){
+  .site-footer{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0 auto;
+   width: 100%;
+   padding: 3rem;
+   .kf-custom-logo{
+     margin: 0;
+   }
+   .kf-footer-navigation{
+    align-self: flex-start;
+    ul{
+      li{
+        text-align: left;
+        margin-left: 0.3rem;
+     }
+    }
+  }
+  }
 }

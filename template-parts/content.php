@@ -29,6 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<div class="kf-content-wrapper">
 	<?php school_theme_post_thumbnail(); ?>
 
 	<div class="entry-content">
@@ -63,6 +64,7 @@
 		);
 		?>
 	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 		<?php school_theme_entry_footer(); ?>

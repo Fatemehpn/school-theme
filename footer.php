@@ -20,17 +20,17 @@
 			?>
 		</nav>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'school-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
+			<p>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://www.fatimanassari.com/school/">Keanna Bayaua, Fatima Pournassari</a>' );
+				printf('Created by <a href="https://www.fatimanassari.com/school/">Keanna Bayaua and Fatima Pournassari</a>' );
 				?>
+			</p>
+			<p>
+				<?php
+					printf('Photos courtesy by <a href="https://www.shopify.com/stock-photos">Burst</a>' );
+				?>
+			</p>
 		</div><!-- .site-info -->
 		<nav id='kf-footer-navigation' class='kf-footer-navigation'>
 				<h2>Links</h2>

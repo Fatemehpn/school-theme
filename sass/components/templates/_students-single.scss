@@ -1,0 +1,14 @@
+.single-kf-student{
+  .kf-content-wrapper{
+    display: block;
+  }
+}
+
+@media(min-width:45em){
+  .single-kf-student{
+    .kf-content-wrapper{
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
