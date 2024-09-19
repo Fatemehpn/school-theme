@@ -44,7 +44,6 @@ get_header();
         <a href="<?php the_permalink();?>">
           <h2><?php the_title(); ?></h2>
         </a>
-        <!-- should change the image size later -->
         <?php the_post_thumbnail('portrait-blog'); ?>
         <?php the_excerpt(); ?>
         <?php 
@@ -56,7 +55,7 @@ get_header();
               ?>
               <span>Specialty:</span>
               <?php
-                echo '<a href="' . esc_url($term_link) . '">' . esc_html($term->name) .'</a>';
+                echo '<a class="specialty" href="' . esc_url($term_link) . '">' . esc_html($term->name) .'</a>';
             }
         }
         ?>
