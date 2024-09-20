@@ -157,6 +157,24 @@ function school_theme_scripts() {
 
 	wp_enqueue_script( 'school-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	// adding the animate on scroll
+	if(get_post_type() == 'post'){
+		wp_enqueue_style( 
+			'aos-css', 
+			'https://unpkg.com/aos@2.3.1/dist/aos.css',
+			 array(), 
+			'1.1.1',);
+		
+		wp_enqueue_script( 
+			'aos-js', 
+			'https://unpkg.com/aos@2.3.1/dist/aos.js', 
+			array(), 
+			'1.1.1',
+			true);
+	
+		wp_add_inline_script( 'aos-js', 'AOS.init();' );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

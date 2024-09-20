@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-aos="fade-up">
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -29,7 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="kf-content-wrapper">
+	<div class="kf-content-wrapper" >
 	<?php school_theme_post_thumbnail(); ?>
 
 	<div class="entry-content">
