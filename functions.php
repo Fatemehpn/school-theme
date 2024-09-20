@@ -145,6 +145,13 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function school_theme_scripts() {
+	wp_enqueue_style(
+		'kf-googlefonts', //unique handle
+		'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', // url to the CSS file
+		array(), /// dependencies
+		null // version number for google fonts always set to null
+	);
+
 	wp_enqueue_style( 'school-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
 
