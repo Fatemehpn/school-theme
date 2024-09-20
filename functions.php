@@ -48,6 +48,7 @@ function school_theme_setup() {
 
 	// Custom image crop sizes
 	add_image_size('portrait-blog', 300, 200, true);
+	add_image_size('landscape-blog', 200, 300, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -144,10 +145,35 @@ add_action( 'widgets_init', 'school_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function school_theme_scripts() {
+	wp_enqueue_style(
+		'kf-googlefonts', //unique handle
+		'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', // url to the CSS file
+		array(), /// dependencies
+		null // version number for google fonts always set to null
+	);
+
 	wp_enqueue_style( 'school-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'school-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'school-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	// adding the animate on scroll
+	if(get_post_type() == 'post'){
+		wp_enqueue_style( 
+			'aos-css', 
+			'https://unpkg.com/aos@2.3.1/dist/aos.css',
+			 array(), 
+			'1.1.1',);
+		
+		wp_enqueue_script( 
+			'aos-js', 
+			'https://unpkg.com/aos@2.3.1/dist/aos.js', 
+			array(), 
+			'1.1.1',
+			true);
+	
+		wp_add_inline_script( 'aos-js', 'AOS.init();' );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -208,7 +234,12 @@ function fwd_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
 
 function fwd_excerpt_more($more){
-	$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__('Read more about the student...', 'kf').'</a>';
+	if (is_home()) {
+		$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__(' Read more...', 'kf').'</a>';
+	} else {
+		$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">'.__('Read more about the student...', 'kf').'</a>';
+	}
+
 	return $more;
 }
 add_filter('excerpt_more','fwd_excerpt_more',999);

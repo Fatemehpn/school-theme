@@ -21,7 +21,9 @@ while ( have_posts() ) :
   the_post();
 
   get_template_part( 'template-parts/content', 'page' );
-
+?>
+<section class="kf-staff-wrapper">
+<?php
   $args = array(
     'post_type'      => 'kf-staff',
     'posts_per_page' => -1,
@@ -56,6 +58,9 @@ while ( have_posts() ) :
           $query = new WP_Query( $args );
     
             // Output Term name.
+            ?>
+            <div class="kf-staff-type-wrapper">
+            <?php
             echo '<h2>' . esc_html( $term->name ) . '</h2>';
             // output content
             while($query->have_posts()){
@@ -90,9 +95,13 @@ while ( have_posts() ) :
                 </article>
                 <?php
                   wp_reset_postdata();
+        
 
             
           }
+          ?>
+          </div>
+          <?php
       }
     }
     ?>
@@ -100,3 +109,5 @@ while ( have_posts() ) :
   <?php endwhile; ?>
 
   </main>
+  <?php
+  get_footer();

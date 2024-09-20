@@ -29,7 +29,7 @@ get_header();
 			// endif;
 		?>
 		<section class="home-blog">
-		<h2><?php echo esc_html('Latest Blog Posts'); ?></h2>
+		<h2><?php echo esc_html('Recent News'); ?></h2>
 		<?php
 			$args = array( 
 				'post_type'      => 'post',

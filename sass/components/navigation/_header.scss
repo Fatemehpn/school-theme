@@ -5,6 +5,7 @@
   top: 0;
   height: 3.75rem;
   grid-area: header;
+  z-index:9999;
 
     .site-branding {
       p{
@@ -26,6 +27,41 @@
 
     .main-navigation{
       position: relative;
+
+      #primary-menu{
+        li{
+          
+          text-align: center;
+          a, a:visited{
+            color: white;
+            padding: 0.5rem 0;
+          }
+          a:hover{
+            background-color: white;
+            color: #1B4D3E;
+          }
+          .sub-menu{
+            
+            display: block;
+            float: none;
+            position: static;
+            box-shadow: none;
+            
+            li a, li a:visited{
+              background-color: #ace1ae68;
+              color: white;
+              text-align: center;
+              padding-left: 0;
+              width: 100%;
+            }
+            li a:hover{
+              background-color:white;
+              color: #1B4D3E;
+            }
+          }
+        }
+      
+      }
     
      
       button{
@@ -59,14 +95,43 @@
 
     .main-navigation{
       grid-column: 3/4;
-
-      ul{
-        justify-content: space-around;
-        align-items: center;
-        li a, li a:visited{
-          color: white;
+      height: 100%;
+      .menu-menu-1-container{
+        height: 100%;
+        #primary-menu{
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          li{
+            width: 100%;
+            a,a:visited{
+              padding: 1.0948rem 0;
+            }
+            .sub-menu{
+              flex-direction: column;
+              align-items: flex-start;
+              float: left;
+              position: absolute;
+              li a, li a:visited{
+                background-color: #1B4D3E;
+                color: white;
+                text-align: left;
+                padding-left: 1rem;
+                width: 12rem;
+              }
+              li a:hover{
+                background-color:white;
+                color: #1B4D3E;
+              }
+            }
+  
+          }
         }
       }
+
+      
     }
 
   }

@@ -64,3 +64,5 @@ if (!empty($terms) && !is_wp_error($terms)) {
     endwhile;
     ?>
 </main>
+<?php
+get_footer();

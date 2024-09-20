@@ -15,8 +15,6 @@ get_header();
 
     <header class="page-header">
       <?php
-      // the_archive_title( '<h1 class="page-title">', '</h1>' );
-      // the_archive_description( '<div class="archive-description">', '</div>' );
       ?>
       <!-- changed the title of the page -->
       <h1>The Class</h1>
@@ -44,7 +42,6 @@ get_header();
         <a href="<?php the_permalink();?>">
           <h2><?php the_title(); ?></h2>
         </a>
-        <!-- should change the image size later -->
         <?php the_post_thumbnail('portrait-blog'); ?>
         <?php the_excerpt(); ?>
         <?php 
@@ -56,7 +53,7 @@ get_header();
               ?>
               <span>Specialty:</span>
               <?php
-                echo '<a href="' . esc_url($term_link) . '">' . esc_html($term->name) .'</a>';
+                echo '<a class="specialty" href="' . esc_url($term_link) . '">' . esc_html($term->name) .'</a>';
             }
         }
         ?>
