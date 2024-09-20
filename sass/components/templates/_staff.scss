@@ -1,0 +1,19 @@
+.kf-staff-wrapper{
+  article{
+    padding: 1rem 1rem 1rem 0;
+  }
+}
+
+@media(min-width:40em){
+  .kf-staff-wrapper{
+    .kf-staff-type-wrapper{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+      h2{
+        grid-column: 1/-1;
+        margin: 0;
+      }
+    }
+  }
+}
